@@ -1,0 +1,7 @@
+li:nth-child(even) {
+    background: red;
+}
+li.clicked {
+    background: blue;
+    padding: 10px;
+}
