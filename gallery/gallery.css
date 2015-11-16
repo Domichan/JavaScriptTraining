@@ -1,0 +1,22 @@
+.grid {
+    width: 1024px;
+    background-color: blue;
+}
+
+.grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    width: 32.2666666667%;
+    display: block;
+}
+
+.content {
+    width: 100%;
+}
