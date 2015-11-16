@@ -6,8 +6,8 @@
 <body>
 
 <div id="menu">
-    <button class="menuItem" onclick='addSquare()'>Add square</button>
-    <button class="menuItem" onclick='addCircle()'>Add circle</button>
+    <button class="menuItem" id="add-square-btn">Add square</button>
+    <button class="menuItem" id="add-circle-btn">Add circle</button>
 </div>
 
 <canvas id="drawField"></canvas>
@@ -33,8 +33,8 @@
             <label for="z" id="lastParam">Width:</label>
             <input id="z" type="number" min="1" max="500"/><br>
         </form>
-        <button onclick='overlay()'>Cancel</button>
-        <button type="submit" onclick="launchAdding()">Add</button>
+        <button id="cancel-btn">Cancel</button>
+        <button id="add-btn" type="submit">Add</button>
 
     </div>
 </div>

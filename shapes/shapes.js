@@ -1,4 +1,3 @@
-var type;
 function Figure() {
     this.x = document.getElementById('x').value;
     this.y = document.getElementById('y').value;
@@ -12,6 +11,8 @@ Figure.prototype.draw = function () {
         this.context.strokeText('This could be any figure you want:)', 50, 50);
     }
 };
+
+////////////////////////
 
 function Square() {
     Figure.call(this);
@@ -28,13 +29,14 @@ Square.prototype.draw = function () {
     }
 };
 
+///////////////////////////////////
+
 function Circle() {
     Figure.call(this);
     this.radius = document.getElementById('z').value;
 }
 
 Circle.prototype = Object.create(Figure.prototype);
-
 
 Circle.prototype.draw = function () {
     if (this.canvas.getContext) {
@@ -45,47 +47,66 @@ Circle.prototype.draw = function () {
     }
 };
 
-function addSquare() {
-    document.getElementsByTagName('h2') [0].innerHTML = "Square";
-    document.getElementById('lastParam').innerHTML = "Width:";
-    type = 'Square';
-    overlay();
+function Form() {
+    this.circleBtn = document.querySelector('#add-circle-btn');
+    this.squareBtn = document.querySelector('#add-square-btn');
 }
 
-function addCircle() {
-    document.getElementsByTagName('h2') [0].innerHTML = "Circle";
-    document.getElementById('lastParam').innerHTML = "Radius:";
-    type = 'Circle';
-    overlay();
-
-}
-
-function clearForm() {
+Form.prototype.clearForm = function() {
     document.getElementById('x').value = "";
     document.getElementById('y').value = "";
     document.getElementById('back').value = "";
     document.getElementById('z').value = "";
 
-}
+};
 
-function launchAdding() {
-    var f1;
-    switch (type) {
-        case 'Square':
-            f1 = new Square();
-            break;
-        case 'Circle':
-            f1 = new Circle();
-            break;
-        default:
-            f1 = new Figure();
-    }
-    f1.draw();
-    clearForm();
-    overlay();
-}
-
-function overlay() {
+Form.prototype.overlay = function() {
     var el = document.getElementById('overlay');
     el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
-}
+};
+
+Form.prototype.addCircle = function() {
+    var self = this;
+    document.getElementsByTagName('h2') [0].innerHTML = "Circle";
+    document.getElementById('lastParam').innerHTML = "Radius:";
+    document.querySelector('#add-btn').onclick = function () {
+        var c1 = new Circle();
+        c1.draw();
+        self.clearForm();
+        self.overlay();
+    };
+    document.querySelector('#cancel-btn').onclick = function () {
+        self.overlay();
+    };
+    this.overlay();
+
+};
+
+Form.prototype.addSquare = function() {
+    var self = this;
+    document.getElementsByTagName('h2') [0].innerHTML = "Square";
+    document.getElementById('lastParam').innerHTML = "Width:";
+    document.querySelector('#add-btn').onclick = function () {
+        var s1 = new Square();
+        s1.draw();
+        self.clearForm();
+        self.overlay();
+    };
+    document.querySelector('#cancel-btn').onclick = function () {
+        self.overlay();
+    };
+    this.overlay();
+
+};
+
+
+window.onload = function () {
+    var form = new Form();
+
+    form.circleBtn.onclick = function () {
+        form.addCircle();
+    };
+    form.squareBtn.onclick = function () {
+        form.addSquare();
+    };
+};
