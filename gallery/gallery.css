@@ -12,6 +12,11 @@
     clear: both;
 }
 
+img {
+    width: 320px;
+    height: 300px;
+}
+
 .column {
     box-sizing: border-box;
     position: relative;
@@ -20,10 +25,48 @@
     display: block;
 }
 
-
-img {
+.content {
     width: 320px;
     height: 300px;
     margin: 10px;
-    border: 1px solid #4b3832;
+    border: 3px solid #4b3832;
+    position: relative;
+}
+
+.content:after {
+    opacity:0;
+}
+
+.content:hover:after {
+    position: absolute;
+    content:"";
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity: 0.5;
+}
+
+.first:after {
+    background-color: red;
+}
+
+.second:after {
+    background-color: orange;
+}
+
+.third:after {
+    background-color: green;
+}
+
+.fourth:after {
+    background-color: blue;
+}
+
+.fifth:after {
+    background-color: yellow;
+}
+
+.sixth:after {
+    background-color: darkviolet;
 }
