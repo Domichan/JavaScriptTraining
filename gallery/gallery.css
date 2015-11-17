@@ -1,6 +1,9 @@
 .grid {
     width: 1024px;
-    background-color: blue;
+    background-color: #fff4e6;
+    border: 5px solid #4b3832;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .grid:after {
@@ -13,10 +16,14 @@
     box-sizing: border-box;
     position: relative;
     float: left;
-    width: 32.2666666667%;
+    width: 33.33%;
     display: block;
 }
 
-.content {
-    width: 100%;
+
+img {
+    width: 320px;
+    height: 300px;
+    margin: 10px;
+    border: 1px solid #4b3832;
 }
