@@ -70,3 +70,50 @@ img {
 .sixth:after {
     background-color: darkviolet;
 }
+
+
+span.text-content {
+    background: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: table;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 300px;
+    width: 320px;
+    opacity: 0;
+
+}
+
+span.text-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content:hover span.text-content{
+    opacity: 1;
+    z-index: 3;
+}
+
+
+@media only screen and (max-width: 800px) and (min-width: 400px) {
+    .grid {
+        width: 750px;
+    }
+    .column {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .grid {
+        width: 350px;
+    }
+    .column {
+        width: 100%;
+    }
+}
