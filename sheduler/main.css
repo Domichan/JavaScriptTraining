@@ -1,0 +1,85 @@
+.container {
+    background-color: #fff4e6;
+    width: 1024px;
+    border: 2px solid #be9b7b;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu {
+    padding: 5px;
+    background: -moz-linear-gradient(#625858, #3c2f2f);
+    background: -webkit-linear-gradient(#625858, #3c2f2f);
+    background: -o-linear-gradient(#625858, #3c2f2f);
+    border-radius: 7px;
+    height: 30px;
+}
+
+.menu select {
+    color: greenyellow;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    border: none;
+    background: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu select option {
+    color: black;
+    font-size: 13px;
+    font-family: Times New Roman;
+    border: none;
+    background: none;
+}
+
+.content {
+    width: 1000px;
+    margin: 10px auto 10px auto;
+}
+
+.content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.box {
+    width: 13%;
+    float: left;
+    margin: 5px;
+}
+
+.day {
+    color: greenyellow;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    background: -moz-linear-gradient(#6e5f5a, #3c2c28);
+    background: -webkit-linear-gradient(#6e5f5a, #3c2c28);
+    background: -o-linear-gradient(#6e5f5a, #3c2c28);
+    border: 1px solid #362a2a;
+    border-radius: 10px;
+    width: 130px;
+    height: 130px;
+}
+
+div .weekDays {
+    height: 50px;
+}
+
+.weekDays h1 {
+    color: greenyellow;
+    font-size: 18px;
+    font-weight: bold;
+}
